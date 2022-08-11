@@ -1,4 +1,5 @@
 C = int(input())
+percent_list = []
 for i in range(C):
     scores = input()
     score_list = scores.split()
@@ -10,4 +11,6 @@ for i in range(C):
     for x in l:
         if x > average:
             student += 1
-    print(student/N)
+    percent_list.append(str(round(student/N*100, 3))+"%")
+for s in percent_list:
+    print(s)

@@ -1,47 +1,25 @@
 N, M = [int(n) for n in input().split()]
 cards = [int(n) for n in input().split()]
 
+def comb(arr, n):
+    L = []
+    if n > len(arr):
+        return L
+
+    elif n == 1:
+        for i in arr:
+            L.append([i])
+
+    for i in range(len(arr) - n + 1):
+        for j in comb(arr[i + 1:], n - 1):
+            L.append([arr[i]] + j)
+    return L
+
+print(comb(cards, 3))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def blackjack(n, m, l):
-#     pick_sum = []
-#     for i in range(N):
-#         pick = []
-#         pick.append(cards[i])
-#         print("a")
-#         print(pick)
-
-#         for i in range(N - 1):
-#             pick.append(cards[i + 1])
-#             print("b")
-#             print(pick)
-
-#             for i in range(N - 2):
-#                 pick.append(cards[i + 2])
-#                 print("c")
-#                 print(pick)
-#                 pick_sum.append(sum(pick))
-#                 pick.pop()
-#             pick.pop()
-#     print(pick_sum)
-#     for item in pick_sum:
-#         if item >= M:
-#             pick_sum.remove(item)
-#     print(max(pick_sum))
-
-# blackjack(N, M, cards)
+# blackjack = []
+# for i in comb(cards, 3):
+#     if i < M:
+#         blackjack.append(i)
+# print(max(blackjack))

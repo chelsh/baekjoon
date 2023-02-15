@@ -1,12 +1,29 @@
-def comb()
+N, K = [int(n) for n in input().split()]
 
-def bag(n, k):
-    wvDict = dict(); wvList = []
-    for i in range(n):
-        w, v = [int(j) for j in input().split()]
-        wvDict[w] = v
+W = []
+V = []
 
-    return
+for _ in range(N):
+    item = [int(n) for n in input().split()]
+    W.append(item[0])
+    V.append(item[1])
 
-N, K = [int(i) for i in input().split()]
-print(bag(N, K))
+dp = [[0 for i in range(K)]]
+
+for i in range(N):
+    for j in range(K):
+        if W[i] > j + 1:
+            dp[i][j + 1] = dp[i][j]
+        elif W[i] == j + 1:
+            if V[i] > dp[i][j]:
+                dp[i][j]
+        else:
+            pass
+    dp.append(dp[i])
+
+
+
+for L in dp:
+    L = max(L)
+
+print(max(dp))

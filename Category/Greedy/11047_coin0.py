@@ -15,10 +15,10 @@ while K != 0:
             break
     if L[-1] <= K:
         coin = L[-1]
-        break
     
     while coin <= K:
-        K -= coin
-        cnt += 1
+        q = K // coin
+        K -= q * coin
+        cnt += q
 
 print(cnt)

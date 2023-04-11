@@ -1,3 +1,6 @@
+import sys
+
+
 def stair(L):
     if len(L) == 1:
         return L[0]
@@ -18,10 +21,10 @@ def stair(L):
 
     
 
-N = int(input())
+N = int(sys.stdin.readline())
 stairs = []
 for _ in range(N):
-    stairs.append(int(input()))
+    stairs.append(int(sys.stdin.readline()))
 
 print(stair(stairs))
 

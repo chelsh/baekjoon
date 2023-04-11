@@ -1,4 +1,7 @@
-N = input()
+import sys
+
+N = sys.stdin.readline()
+
 def deliver_sugar(n):
     if n[-1] == 0 or n[-1] == 5:
         return int(n) // 5
@@ -12,4 +15,5 @@ def deliver_sugar(n):
                 return -1
         cnt += n // 5
         return cnt
+    
 print(deliver_sugar(N))

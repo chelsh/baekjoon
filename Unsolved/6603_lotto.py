@@ -1,33 +1,19 @@
-def lotto(L):
-    k = L[0]
-    S = L[1:]
-    a, b, c, d, e, f = [0, 1, 2, 3, 4, 5]
-    idxList = [a, b, c, d, e, f]
+import sys
 
-    cnt = k - 6
-    targetIdx = 5
+def lotto(T):
+    k = T[0]
+    S = T[1:]
 
-    while a != k - 5:
-        for i in idxList:
-            print(S[i], end=" ")
+    L = [0,1,2,3,4,5]
 
-        if cnt != 0:
-            idxList[targetIdx] += 1
-            cnt -= 1
-        else:
-            targetIdx -= 1
-            idxList[targetIdx] += 1
-            cnt = 1
+    
 
-        print(idxList)
-        print(targetIdx)
-        print(cnt)
-        print()
-
+    
 
 
 while True:
-    T = [int(n) for n in input().split()]
+    T = [int(n) for n in sys.stdin.readline().split()]
+    print(T)
     if T == [0]:
         break
     else:

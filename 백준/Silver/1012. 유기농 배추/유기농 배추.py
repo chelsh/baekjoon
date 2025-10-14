@@ -6,11 +6,11 @@ input = sys.stdin.readline
 T = int(input())
 
 for _ in range(T):
-    M, N, K = map(int, input().split())  # M: 가로(열), N: 세로(행)
+    M, N, K = map(int, input().split())
 
     grid = [[0] * M for _ in range(N)]
     for _ in range(K):
-        x, y = map(int, input().split())  # 주의: (x, y)
+        x, y = map(int, input().split())
         grid[y][x] = 1
 
     visited = [[False] * M for _ in range(N)]
